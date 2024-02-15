@@ -7,7 +7,7 @@ services:
     volumes:
       - .:/app
       - dl:/app/buildroot/dl
-      - output:/app/buildroot/output
+      # - output:/app/buildroot/output
     working_dir: /app/buildroot
     command: bash
   
@@ -22,4 +22,4 @@ services:
 
 volumes:
   dl:
-  output:
+#   output:

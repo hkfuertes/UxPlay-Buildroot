@@ -2,5 +2,5 @@
 	path = buildroot
 	url = https://github.com/buildroot/buildroot
 [submodule "UxPlay"]
-	path = UxPlay
+	path = package/uxplay/source
 	url = https://github.com/FDH2/UxPlay
