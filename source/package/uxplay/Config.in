@@ -1,0 +1,4 @@
+config BR2_PACKAGE_UXPLAY
+	bool "uxplay"
+	help
+	  AirPlay 2 Mirroring software.
