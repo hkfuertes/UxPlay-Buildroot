@@ -1,24 +1,3 @@
-UXPLAY_VERSION = 1.68
-UXPLAY_SITE = $(BR2_EXTERNAL_UXPLAY_PATH)/package/uxplay/repo
-UXPLAY_SITE_METHOD = local
-
-define UXPLAY_BUILD_CMDS
-    export CFLAGS='-D_FILE_OFFSET_BITS=64'
-    export CXXFLAGS='-D_FILE_OFFSET_BITS=64'
-
-    mkdir build && cd build
-    $(CMAKE) .. -DCMAKE_CXX_FLAGS='-O3' -DCMAKE_C_FLAGS='-O3'
-    $(MAKE) -j$(nproc)
-endef
-
-define UXPLAY_INSTALL_TARGET_CMDS
-    $(INSTALL)
-endef
-
-$(eval $(generic-package))
-
-
-
 # "export CFLAGS='-D_FILE_OFFSET_BITS=64'",
 # "export CXXFLAGS='-D_FILE_OFFSET_BITS=64'",
 # "git clone https://github.com/FDH2/UxPlay && cd UxPlay",
@@ -26,3 +5,17 @@ $(eval $(generic-package))
 # "cmake .. -DCMAKE_CXX_FLAGS='-O3' -DCMAKE_C_FLAGS='-O3'",
 # "make -j$(nproc)",
 # "sudo make install"
+
+
+UXPLAY_VERSION = 1.68.2
+UXPLAY_VERSION = tags/v1.68.2
+UXPLAY_SITE = git://github.com/FDH2/UxPlay.git
+UXPLAY_SITE_METHOD = git
+UXPLAY_INSTALL_STAGING = YES
+UXPLAY_INSTALL_TARGET = YES
+UXPLAY_CONF_OPTS = -DCMAKE_CXX_FLAGS='-O3' -DCMAKE_C_FLAGS='-O3'
+UXPLKAY_CXXFLAGS=-D_FILE_OFFSET_BITS=64
+UXPLKAY_CFLAGS=-D_FILE_OFFSET_BITS=64
+# UXPLAY_DEPENDENCIES = libglib2 host-pkgconf
+
+$(eval $(cmake-package))
