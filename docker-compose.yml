@@ -13,7 +13,7 @@ services:
   
   generate_image_donotuse: &generate_image
     <<: *base
-    command: bash -x -c "make BR2_EXTERNAL=./source O=output/$${BOARD_NAME} $${BOARD_NAME}_defconfig && cd output/$${BOARD_NAME} && make && mkdir -p /app/images/ && cp images/sdcard.img /app/images/sdcard-$${BOARD_NAME}.img"
+    command: bash -x -c "make BR2_EXTERNAL=../source/ O=output/$${BOARD_NAME} $${BOARD_NAME}_defconfig && cd output/$${BOARD_NAME} && make && mkdir -p /app/images/ && cp images/sdcard.img /app/images/sdcard-$${BOARD_NAME}.img"
   
   build: # rpi3 for now
     <<: *generate_image
