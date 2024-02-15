@@ -1,3 +1,0 @@
-menu "Packages"
-    source "$BR2_EXTERNAL_UXPLAY_PATH/package/uxplay/Config.in"
-endmenu

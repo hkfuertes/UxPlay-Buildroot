@@ -1,1 +1,0 @@
-include $(sort $(wildcard $(BR2_EXTERNAL_UXPLAY_PATH)/package/*/*.mk))
