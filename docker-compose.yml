@@ -19,6 +19,12 @@ services:
     <<: *generate_image
     environment:
       - BOARD_NAME=raspberrypi
+  
+  # -M pc -kernel bzImage -drive file=rootfs.ext2,if=virtio,format=raw -append "rootwait root=/dev/vda console=tty1 console=ttyS0"  -net nic,model=virtio -net user
+  # --enable-sdl --with-sdlabi=2.0
+  qemu:
+    <<: *generate_image
+    command: bash -x -c "make BR2_EXTERNAL="/app/uxplay"  O=output/qemu qemu_defconfig && cd output/qemu && make && mkdir -p /app/images/ && cp -r images /app/images/qemu"
 
 # volumes:
 #   dl:
