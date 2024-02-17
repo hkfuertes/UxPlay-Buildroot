@@ -13,7 +13,13 @@ services:
   
   generate_image_donotuse: &generate_image
     <<: *base
-    command: bash -x -c "make BR2_EXTERNAL="/app/uxplay"  O=output/$${BOARD_NAME} $${BOARD_NAME}_defconfig && cd output/$${BOARD_NAME} && make && mkdir -p /app/images/ && cp images/sdcard.img /app/images/sdcard-$${BOARD_NAME}.img"
+    command: >
+      bash -x -c "
+        make BR2_EXTERNAL="/app/uxplay"  O=output/$${BOARD_NAME} $${BOARD_NAME}_defconfig 
+        && cd output/$${BOARD_NAME} && make 
+        && mkdir -p /app/images/ 
+        && cp images/sdcard.img /app/images/sdcard-$${BOARD_NAME}.img
+      "
   
   build: # rpi3 for now
     <<: *generate_image
@@ -24,7 +30,13 @@ services:
   # --enable-sdl --with-sdlabi=2.0
   qemu:
     <<: *generate_image
-    command: bash -x -c "make BR2_EXTERNAL="/app/uxplay"  O=output/qemu qemu_defconfig && cd output/qemu && make && mkdir -p /app/images/ && cp -r images /app/images/qemu"
+    command: >
+      bash -x -c "
+        make BR2_EXTERNAL="/app/uxplay"  O=output/qemu qemu_defconfig 
+        && cd output/qemu && make 
+        && mkdir -p /app/images/ 
+        && cp -r images /app/images/qemu
+      "
 
 # volumes:
 #   dl:
