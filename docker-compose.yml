@@ -31,12 +31,7 @@ services:
   qemu:
     <<: *generate_image
     command: >
-      bash -x -c "
-        make BR2_EXTERNAL="/app/uxplay"  O=output/qemu qemu_defconfig 
-        && cd output/qemu && make 
-        && mkdir -p /app/images/ 
-        && cp -r images /app/images/qemu
-      "
+      bash -x -c "make BR2_EXTERNAL="/app/uxplay"  O=output/qemu qemu_defconfig && cd output/qemu && make && mkdir -p /app/images/ && cp -r images /app/images/qemu"
 
 # volumes:
 #   dl:
