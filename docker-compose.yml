@@ -35,6 +35,15 @@ services:
       - /bin/bash
       - -c
       - |
+        make BR2_EXTERNAL="/app/uxplay" O=output/raspberrypi3_64 raspberrypi3_64_defconfig 
+        cd output/raspberrypi3_64 && make
+  
+  rpi3:
+    <<: *base
+    command: 
+      - /bin/bash
+      - -c
+      - |
         make BR2_EXTERNAL="/app/uxplay" O=output/qemu qemu_x86_64_defconfig 
         cd output/qemu && make
 
