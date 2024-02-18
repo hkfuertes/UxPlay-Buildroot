@@ -27,9 +27,7 @@ services:
     environment:
       - BOARD_NAME=raspberrypi3_64
   
-  # sed '/^\s*#/d' qemu_defconfig > qemu_defconfig_nc
-  # -M pc -kernel bzImage -drive file=rootfs.ext2,if=virtio,format=raw -append "rootwait root=/dev/vda console=tty1 console=ttyS0"  -net nic,model=virtio -net user
-  qemu:
+  rpi3:
     <<: *base
     command: 
       - /bin/bash
@@ -38,7 +36,9 @@ services:
         make BR2_EXTERNAL="/app/uxplay" O=output/raspberrypi3_64 raspberrypi3_64_defconfig 
         cd output/raspberrypi3_64 && make
   
-  rpi3:
+  # sed '/^\s*#/d' qemu_defconfig > qemu_defconfig_nc
+  # -M pc -kernel bzImage -drive file=rootfs.ext2,if=virtio,format=raw -append "rootwait root=/dev/vda console=tty1 console=ttyS0"  -net nic,model=virtio -net user
+  qemu:
     <<: *base
     command: 
       - /bin/bash
