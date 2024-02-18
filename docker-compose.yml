@@ -27,6 +27,7 @@ services:
     environment:
       - BOARD_NAME=raspberrypi3_64
   
+  # dtoverlay=vc4-kms-v3d
   rpi3:
     <<: *base
     command: 
