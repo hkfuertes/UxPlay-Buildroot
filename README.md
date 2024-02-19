@@ -17,3 +17,4 @@ docker-compose run rpi3
 - Fix Github Action
 - Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
 - Refactor: put everything buildroot related in the same folder.
+- Opendrop? https://owlink.org/2019/05/16/howto-use-airdrop-on-raspberry-pi-3.html
