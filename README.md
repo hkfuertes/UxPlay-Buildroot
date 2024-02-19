@@ -18,6 +18,7 @@ docker-compose run rpi3
   - ~`Config.in` dependencies:~
     - ~Avahi (full), gstreamer (base, good, bad, av) but we need to see if all the plugins are necessary, libplist, libressl (libssl), pulseaudio.~
   - ~`config.txt`: `dtoverlay=vc4-kms-v3d`~
+- Clean *_defconfig files
 - Wifi
   - A simple way to configure wifi from `/boot`
   - Example of wifi overlay: https://github.com/romainreignier/minimal_raspberrypi_buildroot | https://www.stefanocottafavi.com/buildroot_rpi_wifi/
