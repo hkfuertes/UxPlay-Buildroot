@@ -16,4 +16,4 @@ docker-compose run rpi3
   - Example of wifi overlay: https://github.com/romainreignier/minimal_raspberrypi_buildroot
 - Fix Github Action
 - Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
-- x86_64 live usb?
+- Refactor: put everything buildroot related in the same folder.
