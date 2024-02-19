@@ -3,6 +3,7 @@ Minimal OS Raspberry Pi images with [UxPlay](https://github.com/FDH2/UxPlay) ins
 ### Build
 To build inspect the `docker-compose.yml` file:
 ```bash
+git clone --recurse-submodules https://github.com/hkfuertes/UxPlay-Buildroot && cd UxPlay-Buildroot
 docker-compose run rpi3
 ```
 
