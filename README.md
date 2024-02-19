@@ -21,5 +21,6 @@ docker-compose run rpi3
 - Wifi
   - A simple way to configure wifi from `/boot`
   - Example of wifi overlay: https://github.com/romainreignier/minimal_raspberrypi_buildroot
+- Other boards: RPI02W, RPI0W?, Orange Pi 02W?, x86_64 Live USB?
 - Fix Github Action
 - Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
