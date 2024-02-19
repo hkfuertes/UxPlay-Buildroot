@@ -16,7 +16,7 @@ docker-compose run rpi3
 - House keeping:
   - `package/uxplay` folder
   - `Config.in` dependencies:
-    - Avahi (full), gstreamer (base, gool, bad, av) but we need to see if all the plugins are necessary, libplist, libressl (libssl).
+    - Avahi (full), gstreamer (base, gool, bad, av) but we need to see if all the plugins are necessary, libplist, libressl (libssl), pulseaudio.
   - `config.txt`: `dtoverlay=vc4-kms-v3d`
 - Wifi
   - A simple way to configure wifi from `/boot`
