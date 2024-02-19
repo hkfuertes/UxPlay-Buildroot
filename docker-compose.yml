@@ -22,14 +22,20 @@ services:
         cd output/$${BOARD_NAME} && make 
         mkdir -p /app/images/
         xz -c images/sdcard.img > /app/images/sdcard-$${BOARD_NAME}.img.xz
-    environment:
-      - BOARD_NAME=${BOARD_NAME}
+    # environment:
+    #   - BOARD_NAME=${BOARD_NAME}
   
   # dtoverlay=vc4-kms-v3d
   rpi3:
     <<: *generate_image
     environment:
       - BOARD_NAME=raspberrypi3_64
+
+  # dtoverlay=vc4-kms-v3d
+  rpi4:
+    <<: *generate_image
+    environment:
+      - BOARD_NAME=raspberrypi4_64
   
   # qemu-system-x86_64 -M pc -kernel bzImage -drive file=rootfs.ext2,if=virtio,format=raw -append "rootwait root=/dev/vda" -net nic,model=virtio -net user
   qemu:

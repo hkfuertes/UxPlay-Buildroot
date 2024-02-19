@@ -1,4 +1,1 @@
-config BR2_PACKAGE_UXPLAY
-	bool "uxplay"
-	help
-	  AirPlay 2 Mirroring software.
+source "$BR2_EXTERNAL_UXPLAY_PATH/package/uxplay/Config.in"
