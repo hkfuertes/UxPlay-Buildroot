@@ -24,3 +24,4 @@ docker-compose run rpi3
 - Other boards: RPI02W, RPI0W?, Orange Pi 02W?, x86_64 Live USB?
 - Fix Github Action
 - Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
+- http://underpop.online.fr/b/buildroot/en/_live_cd.htm.gz
