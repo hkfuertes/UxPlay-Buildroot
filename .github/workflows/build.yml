@@ -8,10 +8,11 @@ jobs:
     strategy:
       matrix:
         defconfig:
-        - raspberrypi0w
-        - raspberrypizero2w
-        - raspberrypi4
-        - raspberrypi3a
+        #- raspberrypi0w
+        #- raspberrypizero2w
+        #- raspberrypi4
+        #- raspberrypi3a
+        - raspberrypi3_64
 
     runs-on: ubuntu-latest
 
@@ -21,7 +22,7 @@ jobs:
         submodules: recursive
 
     - name: Setup config
-      run: make BR2_EXTERNAL=../aa_wireless_dongle/ ${{ matrix.defconfig }}_defconfig
+      run: make BR2_EXTERNAL=../uxplay/ ${{ matrix.defconfig }}_defconfig
       working-directory: ./buildroot
 
     - name: Build
@@ -34,5 +35,5 @@ jobs:
 
     - uses: actions/upload-artifact@v3
       with:
-        name: AAWirelessDongle
+        name: UXPLAYBR
         path: ./buildroot/output/images/${{ matrix.defconfig }}-sdcard.img.xz
