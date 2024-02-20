@@ -12,7 +12,7 @@ services:
     command: bash
   
   # Theorically `BOARD_NAME=raspberrypi3_64 docker-compose run build`
-  build: &generate_image
+  builder: &generate_image
     <<: *base
     command: 
       - /bin/bash
@@ -30,12 +30,6 @@ services:
     <<: *generate_image
     environment:
       - BOARD_NAME=raspberrypi3_64
-
-  # dtoverlay=vc4-kms-v3d
-  rpi4:
-    <<: *generate_image
-    environment:
-      - BOARD_NAME=raspberrypi4_64
   
   # qemu-system-x86_64 -M pc -kernel bzImage -drive file=rootfs.ext2,if=virtio,format=raw -append "rootwait root=/dev/vda" -net nic,model=virtio -net user
   qemu:
