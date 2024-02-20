@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# This should be placed in /usr/bin/uxplayfb.sh
-
 if [ "$EUID" -ne 0 ]
 then
     echo "Please run this as root"
