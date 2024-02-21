@@ -8,8 +8,8 @@ jobs:
     strategy:
       matrix:
         defconfig:
-        #- raspberrypi0w
-        #- raspberrypizero2w
+        - raspberrypi0w
+        - raspberrypizero2w
         #- raspberrypi4
         #- raspberrypi3a
         - raspberrypi3_64
