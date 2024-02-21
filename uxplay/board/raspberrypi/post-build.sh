@@ -3,7 +3,10 @@
 set -u
 set -e
 
-if [[ -v $CONSOLE ]]; then
+# Change this for auto start!
+export CONSOLE=true
+
+if [[ $CONSOLE ]]; then
     grep -qE '^tty1::' ${TARGET_DIR}/etc/inittab || \
 	sed -i '/GENERIC_SERIAL/a\
 tty1::respawn:/sbin/getty -L  tty1 0 vt100 # HDMI console' ${TARGET_DIR}/etc/inittab
