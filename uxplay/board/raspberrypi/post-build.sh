@@ -3,7 +3,7 @@
 set -u
 set -e
 
-if [ ${CONSOLE:-true}]; then
+if [[ -v $CONSOLE ]]; then
     grep -qE '^tty1::' ${TARGET_DIR}/etc/inittab || \
 	sed -i '/GENERIC_SERIAL/a\
 tty1::respawn:/sbin/getty -L  tty1 0 vt100 # HDMI console' ${TARGET_DIR}/etc/inittab
