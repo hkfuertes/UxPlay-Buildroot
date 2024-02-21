@@ -1,6 +1,13 @@
-kernel=Image
+[pi3]
 start_file=start.elf
 fixup_file=fixup.dat
+
+[pi4]
+start_file=start4.elf
+fixup_file=fixup4.dat
+
+[all]
+kernel=Image
 
 disable_overscan=1
 
@@ -10,6 +17,8 @@ gpu_mem_256=100
 gpu_mem_512=100
 gpu_mem_1024=100
 
-dtparam=krnbt=on
 dtoverlay=vc4-kms-v3d
 dtoverlay=disable-bt
+dtparam=audio=on
+
+arm_64bit=1
