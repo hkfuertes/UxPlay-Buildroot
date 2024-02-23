@@ -3,6 +3,7 @@ fixup_file=fixup.dat
 kernel=zImage
 
 disable_overscan=1
+hdmi_drive=2
 
 # How much memory in MB to assign to the GPU on Pi models having
 # 256, 512 or 1024 MB total memory
@@ -10,6 +11,8 @@ gpu_mem_256=100
 gpu_mem_512=100
 gpu_mem_1024=100
 
+dtparam=krnbt=on
+
 dtoverlay=vc4-kms-v3d
 dtoverlay=disable-bt
-dtparam=audio=on
+
