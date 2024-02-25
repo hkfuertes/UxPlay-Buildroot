@@ -1,2 +1,4 @@
 /images
 /.vagrant
+uxplay/board/rootfs/opt/*
+uxplay/board/rootfs/var/lib/iwd/*.psk

@@ -17,7 +17,12 @@ docker-compose run rpi3
 ```
 
 ### TODO
-- Audio
+- Audio: ~HDMI~, Audio Jack, Selector
 - Other boards: ~RPI02W~, ~RPI0W~, Orange Pi 02W?, x86_64 Live USB?
-- Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
-- http://underpop.online.fr/b/buildroot/en/_live_cd.htm.gz
+  - http://underpop.online.fr/b/buildroot/en/_live_cd.htm.gz
+- Flutter PI
+  - Flutter UI with info + Media viewer...
+  - fbpdf (for presentations)
+  - Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
+- Other casting solutions? MiracleCast? Chromecast (if exists)?
+
