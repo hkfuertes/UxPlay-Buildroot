@@ -1,19 +1,20 @@
-name: Build-All
+name: Build-Single
 
 on:
   workflow_dispatch:
-
-jobs:
-  build:
-    strategy:
-      matrix:
-        defconfig:
+    inputs:
+      defconfig:
+        type: choice
+        description: Board
+        options: 
         - raspberrypi0w
         - raspberrypizero2w
         #- raspberrypi4
         #- raspberrypi3a
         - raspberrypi3_64
 
+jobs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +23,7 @@ jobs:
         submodules: recursive
 
     - name: Setup config
-      run: make BR2_EXTERNAL=../uxplay/ ${{ matrix.defconfig }}_defconfig
+      run: make BR2_EXTERNAL=../uxplay/ ${{ github.event.inputs.defconfig }}_defconfig
       working-directory: ./buildroot
 
     - name: Build
@@ -30,10 +31,10 @@ jobs:
       working-directory: ./buildroot
 
     - name: Compress sdcard.img
-      run: xz -c sdcard.img > ${{ matrix.defconfig }}-sdcard.img.xz
+      run: xz -c sdcard.img > ${{ github.event.inputs.defconfig }}-sdcard.img.xz
       working-directory: ./buildroot/output/images
 
     - uses: actions/upload-artifact@v3
       with:
         name: UXPLAYBR
-        path: ./buildroot/output/images/${{ matrix.defconfig }}-sdcard.img.xz
+        path: ./buildroot/output/images/${{ github.event.inputs.defconfig }}-sdcard.img.xz
