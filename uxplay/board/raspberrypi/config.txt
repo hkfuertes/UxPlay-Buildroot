@@ -19,7 +19,7 @@ gpu_mem_512=100
 gpu_mem_1024=100
 
 dtparam=krnbt=on
-
+# dtparam=audio=on # Uncomment for audio on headphones
 dtoverlay=vc4-kms-v3d
 dtoverlay=disable-bt
 
