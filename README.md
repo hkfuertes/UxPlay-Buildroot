@@ -18,6 +18,8 @@ docker-compose run rpi3
 
 ### TODO
 - Audio: ~HDMI~, Audio Jack, Selector
+- Wifi:
+  - 802.11r Roaming not working on Pi0w
 - Other boards: ~RPI02W~, ~RPI0W~, Orange Pi 02W?, x86_64 Live USB?
   - http://underpop.online.fr/b/buildroot/en/_live_cd.htm.gz
 - Flutter PI
