@@ -10,9 +10,8 @@ jobs:
         defconfig:
         - raspberrypi0w
         - raspberrypizero2w
-        #- raspberrypi4
-        #- raspberrypi3a
         - raspberrypi3_64
+        - raspberrypi4_64
 
     runs-on: ubuntu-latest
 

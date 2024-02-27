@@ -8,6 +8,19 @@ Passphrase=<psk>
 ```
 > **Note**: The SSID of the network is used as a filename only when it contains only alphanumeric characters or one of - _. If it contains any other characters, the name will instead be an =-character followed by the hex-encoded version of the SSID. (https://wiki.archlinux.org/title/Iwd and https://man.archlinux.org/man/iwd.config.5)
 
+### Boot from USB
+To boot from usb you need to change:
+```diff
+@/boot/cmdline.txt
+-- root=/dev/mmcblk0p2 rootwait console=tty1 console=ttyAMA0,115200
+++ root=/dev/sda2 rootwait console=tty1 console=ttyAMA0,115200
+```
+
+### Audio
+By default the audio comes from the HDMI (`vc4-kms-v3d` overlay). If you wnat to make audio come from the audio jack (if available), uncomment `dtparam=audio=on` from `/boot/config.txt`. On the PI4B, the audio comes from the HDMI **closest** to power.
+
+---
+
 ### Build
 To build inspect the `docker-compose.yml` file:
 ```bash
@@ -16,22 +29,14 @@ cd UxPlay-Buildroot
 docker-compose run rpi3
 ```
 
+---
+
 ### TODO
-- Audio: ~HDMI~, Audio Jack, Selector
 - Wifi:
   - 802.11r Roaming not working on Pi0w
 - Other boards: ~RPI02W~, ~RPI0W~, Orange Pi 02W?, x86_64 Live USB?
   - PI4 
     - Load system to ram!
-    - sdcard issue, changed:
-
-      ```diff
-      @cmdline.txt
-      -- root=/dev/mmcblk0p2 rootwait console=tty1 console=ttyAMA0,115200
-      ++ root=/dev/sda2 rootwait console=tty1 console=ttyAMA0,115200
-      ```
-      > Test with other sdcards!
-    - Audio: hdmi closest to power
   - http://underpop.online.fr/b/buildroot/en/_live_cd.htm.gz
 - Flutter PI
   - Flutter UI with info + Media viewer...

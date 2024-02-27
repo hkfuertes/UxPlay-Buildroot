@@ -9,9 +9,8 @@ on:
         options: 
         - raspberrypi0w
         - raspberrypizero2w
-        #- raspberrypi4
-        #- raspberrypi3a
         - raspberrypi3_64
+        - raspberrypi4_64
 
 jobs:
   build:
