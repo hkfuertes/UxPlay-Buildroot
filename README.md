@@ -17,7 +17,7 @@ To boot from usb you need to change:
 ```
 
 ### Audio
-By default the audio comes from the HDMI (`vc4-kms-v3d` overlay). If you wnat to make audio come from the audio jack (if available), uncomment `dtparam=audio=on` from `/boot/config.txt`. On the PI4B, the audio comes from the HDMI **closest** to power.
+By default the audio comes from the HDMI (`vc4-kms-v3d` overlay). If you want to make audio come from the audio jack (if available), uncomment `dtparam=audio=on` from `/boot/config.txt`. On the PI4B, the audio comes from the HDMI **closest** to power.
 
 ---
 
