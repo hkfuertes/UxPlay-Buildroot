@@ -26,6 +26,11 @@ services:
     #   - BOARD_NAME=${BOARD_NAME}
   
   # dtoverlay=vc4-kms-v3d
+  rpi4:
+    <<: *generate_image
+    environment:
+      - BOARD_NAME=raspberrypi4_64
+
   rpi3:
     <<: *generate_image
     environment:

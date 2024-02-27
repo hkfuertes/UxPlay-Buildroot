@@ -22,5 +22,5 @@ fi
 echo >> ${TARGET_DIR}/etc/inittab
 
 # Mount /boot and copy any network to iwd folder
-echo "::sysinit:/bin/sh -c 'mkdir -p /boot && mount /dev/mmcblk0p1 /boot'" >> ${TARGET_DIR}/etc/inittab
+echo "::sysinit:/bin/sh -c 'mkdir -p /boot && mount /dev/disk/by-label/bootfs /boot'" >> ${TARGET_DIR}/etc/inittab
 echo "::sysinit:/bin/sh -c 'mkdir -p /var/lib/iwd/ && mv /boot/*.psk /var/lib/iwd/'" >> ${TARGET_DIR}/etc/inittab
