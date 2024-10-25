@@ -29,18 +29,15 @@ cd UxPlay-Buildroot
 docker-compose run rpi3
 ```
 
+### Issues
+- 802.11r Roaming not working on Pi0w
+
 ---
 
 ### TODO
-- Wifi:
-  - 802.11r Roaming not working on Pi0w
 - Other boards: ~RPI02W~, ~RPI0W~, Orange Pi 02W?, x86_64 Live USB?
   - PI4 
     - Load system to ram!
   - http://underpop.online.fr/b/buildroot/en/_live_cd.htm.gz
-- Flutter PI
-  - Flutter UI with info + Media viewer...
-  - fbpdf (for presentations)
-  - Startup process to display simple information like the pin (see: https://github.com/hkfuertes/UxPlay-Packer)
-- Other casting solutions? MiracleCast? Chromecast (if exists)?
+
 

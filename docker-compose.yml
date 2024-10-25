@@ -45,26 +45,4 @@ services:
     <<: *generate_image
     environment:
       - BOARD_NAME=raspberrypizero2w
-  
-  # qemu-system-x86_64 -M pc -kernel bzImage -drive file=rootfs.ext2,if=virtio,format=raw -append "rootwait root=/dev/vda" -net nic,model=virtio -net user
-  qemu:
-    <<: *base
-    command: 
-      - /bin/bash
-      - -c
-      - |
-        make BR2_EXTERNAL="/app/uxplay" O=output/qemu qemu_x86_64_defconfig 
-        cd output/qemu && make
 
-  pc:
-    <<: *base
-    command: 
-      - /bin/bash
-      - -c
-      - |
-        make BR2_EXTERNAL="/app/uxplay" O=output/pc pc_x86_64_bios_defconfig 
-        cd output/pc && make
-  
-# volumes:
-#   dl:
-#   output:

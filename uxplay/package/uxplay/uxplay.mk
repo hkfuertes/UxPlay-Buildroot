@@ -7,8 +7,8 @@
 # "sudo make install"
 
 
-UXPLAY_VERSION = 1.68.2
-UXPLAY_VERSION = tags/v1.68.2
+UXPLAY_VERSION = 1.70
+UXPLAY_VERSION = tags/v1.70
 UXPLAY_SITE = https://github.com/FDH2/UxPlay.git
 UXPLAY_SITE_METHOD = git
 UXPLAY_INSTALL_STAGING = YES
