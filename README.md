@@ -26,7 +26,7 @@ To build inspect the `docker-compose.yml` file:
 ```bash
 git clone --recurse-submodules https://github.com/hkfuertes/UxPlay-Buildroot
 cd UxPlay-Buildroot
-docker-compose run rpi3
+docker compose run --rm rpi3
 ```
 
 ### Issues

@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   bash: &base
     build: .
@@ -18,12 +16,12 @@ services:
       - /bin/bash
       - -c
       - |
+        export FORCE_UNSAFE_CONFIGURE=1 # Build with root
         make BR2_EXTERNAL="/app/uxplay" O=output/$${BOARD_NAME} $${BOARD_NAME}_defconfig 
         cd output/$${BOARD_NAME} && make 
         mkdir -p /app/images/
         xz -c images/sdcard.img > /app/images/sdcard-$${BOARD_NAME}.img.xz
-    environment:
-      -  FORCE_UNSAFE_CONFIGURE=1
+    # environment:
     #   - BOARD_NAME=${BOARD_NAME}
   
   # dtoverlay=vc4-kms-v3d
